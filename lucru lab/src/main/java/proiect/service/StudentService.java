@@ -2,19 +2,29 @@ package main.java.proiect.service;
 
 import main.java.proiect.entity.person.Student;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class StudentService {
-    /*
-    Define me dummy StudenetService class instances and make a getter for that information
-     */
-    public Student[] getStudents(){
-        Student[] Students = new Student[5];
+    public List<Student> students;
 
-        Students[0] = new Student("1234567890123", "John", "Doe", "Strada X, nr. 1", "0722222222", 1, "123", "Informatica");
-        Students[1] = new Student("1234567890124", "Jane", "Doe", "Strada X, nr. 2", "0722222223", 1, "123", "Informatica");
-        Students[2] = new Student("1234567890124", "Jane", "Doe", "Strada X, nr. 2", "0722222223", 1, "123", "Informatica");
-        Students[3] = new Student("1234567890124", "Jane", "Doe", "Strada X, nr. 2", "0722222223", 1, "123", "Informatica");
-        Students[4] = new Student("1234567890124", "Jane", "Doe", "Strada X, nr. 2", "0722222223", 1, "123", "Informatica");
+    public StudentService(){
+        this.students = new ArrayList<>();
+    }
+    public void addStudent(Student student){
+        this.students.add(student);
+    }
 
-        return Students;
+    public void getDummyStudents(){
+        this.students.add(new Student("1234567890123", "John", "Doe", "Strada X, nr. 1", "0722222222", 1, "123", "Informatica"));
+        this.students.add(new Student("1234567890123", "John", "Doe", "Strada X, nr. 1", "0722222222", 1, "123", "Informatica"));
+        this.students.add(new Student("1234567890124", "Xane", "Doe", "Strada X, nr. 2", "0722222223", 1, "123", "Informatica"));
+        this.students.add(new Student("1234567890135", "Jane", "Doe", "Strada X, nr. 2", "0722222223", 1, "123", "Informatica"));
+        this.students.add(new Student("1234567890124", "Jane", "Doe", "Strada X, nr. 2", "0722222223", 1, "123", "Informatica"));
+        this.students.add(new Student("1234567890124", "Jane", "Doe", "Strada X, nr. 2", "0722222223", 1, "123", "Informatica"));
+    }
+    public List<Student> getStudents(){
+        return this.students;
     }
 }

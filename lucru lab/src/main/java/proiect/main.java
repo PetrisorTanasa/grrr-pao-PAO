@@ -7,11 +7,16 @@ import main.java.proiect.entity.room.Amphitheater;
 import main.java.proiect.entity.room.ClassRoom;
 import main.java.proiect.service.StudentService;
 
+import java.util.List;
+
 public class main {
     public static void main(String[] args) {
-        Student[] students = (new StudentService()).getStudents();
-        for(int i = 0; i < students.length; i++){
-            System.out.println(students[i]);
+        StudentService studentService = new StudentService();
+        studentService.getDummyStudents();
+        List<Student> students = studentService.getStudents();
+        students.sort((o1, o2) -> o1.getCnp().compareTo(o2.getCnp()));
+        for(Student i : students){
+            System.out.println(i);
         }
 
         Proffessor proffessor= new Proffessor();
