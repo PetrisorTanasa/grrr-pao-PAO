@@ -8,6 +8,7 @@ import main.java.proiect.entity.room.ClassRoom;
 import main.java.proiect.service.StudentService;
 
 import java.util.List;
+import java.util.Vector;
 
 public class main {
     public static void main(String[] args) {
@@ -39,13 +40,15 @@ public class main {
         amphitheater.setType("Amfiteatru");
         System.out.println(amphitheater);
 
-        ClassRoom classRoom = new ClassRoom();
-        classRoom.setNumber(1);
-        classRoom.setCapacity(100);
-        classRoom.setNumberOfCalculators(2);
-        classRoom.setNumberOfTables(20);
-        classRoom.setType("classroom");
-        System.out.println(classRoom);
+        Vector<ClassRoom> classRooms = new Vector<>();
+        classRooms.add(new ClassRoom(1, 100, "classroom", 20, 20));
+//        ClassRoom classRoom = new ClassRoom();
+//        classRoom.setNumber(1);
+//        classRoom.setCapacity(100);
+//        classRoom.setNumberOfCalculators(2);
+//        classRoom.setNumberOfTables(20);
+//        classRoom.setType("classroom");
+        System.out.println(classRooms.get(0));
 
         Faculty faculty = new Faculty();
         faculty.setNameOfDean("John Doe");
