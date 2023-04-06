@@ -16,6 +16,25 @@ public class StudentService {
         this.students.add(student);
     }
 
+    public void removeStudent(Student student){
+        this.students.remove(student);
+    }
+
+    public void updateStudent(Student student){
+        for(Student s : this.students){
+            if(s.equals(student)){
+                s.setCnp(student.getCnp());
+                s.setName(student.getName());
+                s.setSurname(student.getSurname());
+                s.setAddress(student.getAddress());
+                s.setPhoneNumber(student.getPhoneNumber());
+                s.setYear(student.getYear());
+                s.setGroup(student.getGroup());
+                s.setSpecialization(student.getSpecialization());
+            }
+        }
+    }
+
     public void getDummyStudents(){
         this.students.add(new Student("1234567890123", "John", "Doe", "Strada X, nr. 1", "0722222222", 1, "123", "Informatica"));
         this.students.add(new Student("1234567890123", "John", "Doe", "Strada X, nr. 1", "0722222222", 1, "123", "Informatica"));
