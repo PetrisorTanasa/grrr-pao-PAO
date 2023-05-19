@@ -8,8 +8,9 @@ public class Building {
     private int foundingYear;
     private int squareMeters;
     private int usefulSquareMeters;
+    private int id;
 
-    public Building(String name, String address, int numberOfRooms, int numberOfFloors, int foundingYear, int squareMeters, int usefulSquareMeters) {
+    public Building(String name, String address, int numberOfRooms, int numberOfFloors, int foundingYear, int squareMeters, int usefulSquareMeters, int id) {
         this.name = name;
         this.address = address;
         this.numberOfRooms = numberOfRooms;
@@ -17,8 +18,8 @@ public class Building {
         this.foundingYear = foundingYear;
         this.squareMeters = squareMeters;
         this.usefulSquareMeters = usefulSquareMeters;
+        this.id = id;
     }
-
     public Building(){
         this.name = "";
         this.address = "";
@@ -27,6 +28,7 @@ public class Building {
         this.foundingYear = 0;
         this.squareMeters = 0;
         this.usefulSquareMeters = 0;
+        this.id = 0;
     }
 
     public String getName() {
@@ -78,8 +80,16 @@ public class Building {
         this.usefulSquareMeters = usefulSquareMeters;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String toString() {
-        return "Name: " + name + ", Address: " + address + ", Number of rooms: " + numberOfRooms + ", Number of floors: " + numberOfFloors + ", Founding year: " + foundingYear + ", Square meters: " + squareMeters + ", Useful square meters: " + usefulSquareMeters;
+        return "ID: " + id + ", Name: " + name + ", Address: " + address + ", Number of rooms: " + numberOfRooms + ", Number of floors: " + numberOfFloors + ", Founding year: " + foundingYear + ", Square meters: " + squareMeters + ", Useful square meters: " + usefulSquareMeters;
     }
 
     @Override

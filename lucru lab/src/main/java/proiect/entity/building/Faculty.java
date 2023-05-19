@@ -13,8 +13,8 @@ public class Faculty extends Building{
     private int numberOfCafeterias;
     private int numberOfAmphitheaters;
 
-    public Faculty(String name, String address, int numberOfRooms, int numberOfFloors, int foundingYear, int squareMeters, int usefulSquareMeters, String nameOfDean, String nameOfSecretary, int numberOfDepartments, int numberOfStudents, int numberOfTeachers, int numberOfLaboratories, int numberOfClassRooms, int numberOfOffices, int numberOfLibraries, int numberOfCafeterias, int numberOfAmphitheaters) {
-        super(name, address, numberOfRooms, numberOfFloors, foundingYear, squareMeters, usefulSquareMeters);
+    public Faculty(Integer id, String name, String address, int numberOfRooms, int numberOfFloors, int foundingYear, int squareMeters, int usefulSquareMeters, String nameOfDean, String nameOfSecretary, int numberOfDepartments, int numberOfStudents, int numberOfTeachers, int numberOfLaboratories, int numberOfClassRooms, int numberOfOffices, int numberOfLibraries, int numberOfCafeterias, int numberOfAmphitheaters) {
+        super(name, address, numberOfRooms, numberOfFloors, foundingYear, squareMeters, usefulSquareMeters,id);
         this.nameOfDean = nameOfDean;
         this.nameOfSecretary = nameOfSecretary;
         this.numberOfDepartments = numberOfDepartments;
@@ -122,7 +122,7 @@ public class Faculty extends Building{
 
     @Override
     public String toString() {
-        return "NameOfDean: " + nameOfDean + ", NameOfSecretary: " + nameOfSecretary + ", NumberOfDepartments: " + numberOfDepartments + ", NumberOfStudents: " + numberOfStudents + ", NumberOfTeachers: " + numberOfTeachers + ", NumberOfLaboratories: " + numberOfLaboratories + ", NumberOfClassRooms: " + numberOfClassRooms + ", NumberOfOffices: " + numberOfOffices + ", NumberOfLibraries: " + numberOfLibraries + ", NumberOfCafeterias: " + numberOfCafeterias + ", NumberOfAmphitheaters: " + numberOfAmphitheaters + ", " + super.toString();
+        return super.toString() + ", NameOfDean: " + nameOfDean + ", NameOfSecretary: " + nameOfSecretary + ", NumberOfDepartments: " + numberOfDepartments + ", NumberOfStudents: " + numberOfStudents + ", NumberOfTeachers: " + numberOfTeachers + ", NumberOfLaboratories: " + numberOfLaboratories + ", NumberOfClassRooms: " + numberOfClassRooms + ", NumberOfOffices: " + numberOfOffices + ", NumberOfLibraries: " + numberOfLibraries + ", NumberOfCafeterias: " + numberOfCafeterias + ", NumberOfAmphitheaters: " + numberOfAmphitheaters + ", " + super.toString();
     }
 
     @Override

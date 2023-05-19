@@ -6,11 +6,7 @@ import main.java.proiect.persistence.util.DatabaseConnectionUtils;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 import static main.java.proiect.persistence.util.DatabaseConnectionUtils.getDatabaseConnection;
 
@@ -69,6 +65,7 @@ public class FacultyRepository implements GenericRepository<Faculty> {
             var result = statement.executeQuery();
             if (result.next()) {
                 return Optional.of(new Faculty(
+                        result.getInt("id"),
                         result.getString("name"),
                         result.getString("address"),
                         result.getInt("nrrooms"),
@@ -95,38 +92,38 @@ public class FacultyRepository implements GenericRepository<Faculty> {
         return Optional.empty();
     }
 
-    public Optional<Faculty> findByName(Faculty entity){
-        String sql = "SELECT * FROM faculties WHERE name = ?";
-        try (PreparedStatement statement = this.connection.prepareStatement(sql)) {
-            statement.setString(1, entity.getName());
-            var result = statement.executeQuery();
-            if (result.next()) {
-                return Optional.of(new Faculty(
-                        result.getString("name"),
-                        result.getString("address"),
-                        result.getInt("nrrooms"),
-                        result.getInt("nrfloors"),
-                        result.getInt("foundingyear"),
-                        result.getInt("squaremeters"),
-                        result.getInt("usefulsquaremeters"),
-                        result.getString("dean"),
-                        result.getString("secretary"),
-                        result.getInt("nrdepartments"),
-                        result.getInt("nrstudents"),
-                        result.getInt("nrteachers"),
-                        result.getInt("nrlaboratories"),
-                        result.getInt("nrclassrooms"),
-                        result.getInt("nroffices"),
-                        result.getInt("nrlibraries"),
-                        result.getInt("nrcafeterias"),
-                        result.getInt("nramphitheaters")
-                ));
-            }
-        } catch (SQLException e) {
-            System.out.println("Could not find faculty in database: " + e.getMessage());
-        }
-        return Optional.empty();
-    }
+//    public Optional<Faculty> findByName(Faculty entity){
+//        String sql = "SELECT * FROM faculties WHERE name = ?";
+//        try (PreparedStatement statement = this.connection.prepareStatement(sql)) {
+//            statement.setString(1, entity.getName());
+//            var result = statement.executeQuery();
+//            if (result.next()) {
+//                return Optional.of(new Faculty(
+//                        result.getString("name"),
+//                        result.getString("address"),
+//                        result.getInt("nrrooms"),
+//                        result.getInt("nrfloors"),
+//                        result.getInt("foundingyear"),
+//                        result.getInt("squaremeters"),
+//                        result.getInt("usefulsquaremeters"),
+//                        result.getString("dean"),
+//                        result.getString("secretary"),
+//                        result.getInt("nrdepartments"),
+//                        result.getInt("nrstudents"),
+//                        result.getInt("nrteachers"),
+//                        result.getInt("nrlaboratories"),
+//                        result.getInt("nrclassrooms"),
+//                        result.getInt("nroffices"),
+//                        result.getInt("nrlibraries"),
+//                        result.getInt("nrcafeterias"),
+//                        result.getInt("nramphitheaters")
+//                ));
+//            }
+//        } catch (SQLException e) {
+//            System.out.println("Could not find faculty in database: " + e.getMessage());
+//        }
+//        return Optional.empty();
+//    }
 
     @Override
     public List<Faculty> findAll() {
@@ -138,6 +135,7 @@ public class FacultyRepository implements GenericRepository<Faculty> {
             var result = statement.executeQuery();
             while (result.next()) {
                 faculties.add(new Faculty(
+                        result.getInt("id"),
                         result.getString("name"),
                         result.getString("address"),
                         result.getInt("nrrooms"),
@@ -210,6 +208,31 @@ public class FacultyRepository implements GenericRepository<Faculty> {
         } catch (SQLException e) {
             System.out.println("Could not update faculty in database: " + e.getMessage());
         }
+
+    }
+
+    @Override
+    public Faculty findById(Integer Id) {
+        return null;
+    }
+
+
+    public Faculty findByIdInt(Integer Id) {
+        for(Faculty faculty : this.findAll()){
+            if(faculty.getId() == Id){
+                return faculty;
+            }
+        }
+        return null;
+    }
+
+    public Faculty findByName(String name){
+        for(Faculty faculty : this.findAll()){
+            if(faculty.getName().equals(name)){
+                return faculty;
+            }
+        }
+        return null;
     }
 
     @Override

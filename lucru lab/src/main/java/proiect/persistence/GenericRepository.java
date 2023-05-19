@@ -1,5 +1,7 @@
 package main.java.proiect.persistence;
 
+import main.java.proiect.entity.building.Faculty;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +22,8 @@ public interface GenericRepository<T> {
     Optional<T> findById(String id);
 
     void update(T entity);
+
+    Faculty findById(Integer Id);
 
     void delete(T entity);
 }
