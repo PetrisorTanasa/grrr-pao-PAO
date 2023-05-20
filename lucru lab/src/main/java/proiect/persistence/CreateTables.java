@@ -64,12 +64,18 @@ public class CreateTables {
                     "nrProjectors INTEGER, " +
                     "nrOutlets INTEGER);";
 
+            String createAuditTable = "CREATE TABLE Audit(" +
+                    "id INT PRIMARY KEY DEFAULT nextval('seq')," +
+                    "action VARCHAR(255) ," +
+                    "timestamp VARCHAR(255));";
+
             try(Statement statement = connection.createStatement()){
                 System.out.println(createAmphitheaterTable);
                 System.out.println(createClassRoomTable);
                 System.out.println(createStudentTable);
                 System.out.println(createProffessorTable);
                 System.out.println(createFacultyTable);
+                System.out.println(createAuditTable);
                 statement.execute("DROP TABLE IF EXISTS Proffessors CASCADE;");
                 statement.execute(createProffessorTable);
                 statement.execute("DROP TABLE IF EXISTS Students CASCADE;");
@@ -82,6 +88,8 @@ public class CreateTables {
                 statement.execute(createSequence);
                 statement.execute("DROP TABLE IF EXISTS Faculties CASCADE;");
                 statement.execute(createFacultyTable);
+                statement.execute("DROP TABLE IF EXISTS Audit CASCADE;");
+                statement.execute(createAuditTable);
                 System.out.println("Table created successfully");
             }
         } catch (SQLException e) {

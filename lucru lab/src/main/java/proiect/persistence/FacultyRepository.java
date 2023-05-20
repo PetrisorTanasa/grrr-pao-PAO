@@ -245,4 +245,14 @@ public class FacultyRepository implements GenericRepository<Faculty> {
             System.out.println("Could not delete faculty from database: " + e.getMessage());
         }
     }
+
+    public void deleteById(Integer id) {
+        String sql = "DELETE FROM faculties WHERE id = ?";
+        try (PreparedStatement statement = this.connection.prepareStatement(sql)) {
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Could not delete faculty from database: " + e.getMessage());
+        }
+    }
 }

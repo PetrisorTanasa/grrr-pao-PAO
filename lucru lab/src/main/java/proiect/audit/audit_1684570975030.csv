@@ -1,0 +1,10 @@
+Action,Timestamp
+SYSTEM running,1684570975041
+Faculty - Add a new faculty,1684570975041
+Faculty - Find faculty by id,1684570975041
+Faculty - List all faculties,1684570975041
+Student - List all students,1684570975041
+Faculty - Update faculty details,1684570975041
+Faculty - Delete faculty,1684570975041
+Audit - wrote data to file,1684570975041
+Faculty - Find faculty by name,1684570975041

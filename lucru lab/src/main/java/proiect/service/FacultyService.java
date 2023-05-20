@@ -13,7 +13,6 @@ public class FacultyService {
     private final FacultyRepository facultyRepository = FacultyRepository.getInstance();
     private final Scanner scanner = new Scanner(System.in);
     public void saveFaculty(){
-        FacultyRepository facultyRepository = FacultyRepository.getInstance();
         System.out.println(facultyRepository.findAll());
         Faculty faculty = this.readData();
         facultyRepository.save(faculty);
@@ -35,14 +34,12 @@ public class FacultyService {
     }
 
     public Faculty updateFaculty(){
-        FacultyRepository facultyRepository = FacultyRepository.getInstance();
         Faculty faculty = this.readData();
         facultyRepository.update(faculty);
         return faculty;
     }
 
     public Faculty deleteFaculty(){
-        FacultyRepository facultyRepository = FacultyRepository.getInstance();
         System.out.println("Enter the id of the faculty you want to delete: ");
         int id = scanner.nextInt();
         Faculty faculty = facultyRepository.findByIdInt(id);
