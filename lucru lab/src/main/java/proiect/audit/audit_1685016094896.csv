@@ -1,0 +1,16 @@
+Action,Timestamp
+SYSTEM running,1685016094886
+Classrooms - List all classrooms,1685015613678
+Faculty - Find faculty by id,2023-05-20 09:19:12
+Classrooms - Add a new classroom,1685014301060
+Student - List all students,2023-05-20 09:06:46
+Faculty - Update faculty details,2023-05-20 09:19:12
+Faculty - Delete faculty,2023-05-20 09:26:30
+Faculty - Find faculty by name,2023-05-20 09:19:12
+Classrooms - Find classroom by id,1685015204739
+Faculty - Add a new faculty,2023-05-20 09:19:12
+Classrooms - Get classrooms by type,1685015345896
+Classrooms - Delete classroom,1685015975496
+Faculty - List all faculties,2023-05-20 09:26:30
+Classrooms - Update classroom details,1685015608242
+Audit - wrote data to file,2023-05-20 11:12:45

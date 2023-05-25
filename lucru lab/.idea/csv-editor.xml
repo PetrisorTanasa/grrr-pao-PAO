@@ -10,104 +10,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684563337898.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684563337902.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684563483821.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684563483825.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684564006578.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684564006582.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684564378433.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684564378439.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684564614635.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684564614641.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684564630683.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684564941140.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684564941144.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\main\java\proiect\audit\audit_1684565712975.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\src\main\java\proiect\audit\audit_1684566487385.csv">
           <value>
             <Attribute>
@@ -165,6 +67,13 @@
           </value>
         </entry>
         <entry key="\src\main\java\proiect\audit\audit_1684570975030.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\proiect\audit\audit_1685015975502.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

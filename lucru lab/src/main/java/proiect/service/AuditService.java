@@ -44,7 +44,7 @@ public class AuditService {
             writer.newLine();
             // Add rows
             for (Audit audit : auditRepository.findAll()) {
-                writer.write( audit.getAction() + "," + System.currentTimeMillis());
+                writer.write( audit.getAction() + "," + audit.getTimestamp());
                 writer.newLine();
             }
             // Add more data rows as needed

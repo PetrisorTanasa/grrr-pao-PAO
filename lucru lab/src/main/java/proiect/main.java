@@ -7,10 +7,7 @@ import main.java.proiect.entity.person.Student;
 import main.java.proiect.entity.room.Amphitheater;
 import main.java.proiect.entity.room.ClassRoom;
 import main.java.proiect.persistence.FacultyRepository;
-import main.java.proiect.service.AuditService;
-import main.java.proiect.service.FacultyService;
-import main.java.proiect.service.ProffessorService;
-import main.java.proiect.service.StudentService;
+import main.java.proiect.service.*;
 import main.java.proiect.exceptions.CustomException;
 import main.java.proiect.persistence.FacultyRepository;
 
@@ -32,6 +29,8 @@ public class main {
     private final ProffessorService proffessorService = new ProffessorService();
 
     private final AuditService auditService = AuditService.getInstance();
+
+    private final ClassroomService classroomService= new ClassroomService();
 
     public String ACTION = "SYSTEM running";
     LocalDateTime timestamp = LocalDateTime.now();
@@ -270,11 +269,10 @@ public class main {
                 System.out.println("You have selected the classrooms section. Choose your action:");
                 System.out.println("1. Add a new classroom");
                 System.out.println("2. List all classrooms");
-                System.out.println("3. Find classroom by name");
-                System.out.println("4. Find proffessor by cnp");
-                System.out.println("5. Update proffessor details");
-                System.out.println("6. Delete proffessor");
-                System.out.println("7. Get proffessors by department");
+                System.out.println("3. Find classroom by id");
+                System.out.println("4. Update classroom details");
+                System.out.println("5. Delete classroom");
+                System.out.println("6. Get classrooms by type");
                 System.out.println("0. exit");
                 int optionSubmenu = readOption();
                 switch (optionSubmenu)  {
@@ -286,46 +284,31 @@ public class main {
                     }
                     case 2: {
                         this.ACTION += "List all classrooms";
-                        for(Classroom classroom : classroomService.findAll()){
+                        for(ClassRoom classroom : classroomService.findAll()){
                             System.out.println(classroom);
                         }
                         break;
                     }
                     case 3: {
-                        this.ACTION += "Find classroom by name";
-                        System.out.println("Enter the name of the classroom you want to find: ");
-                        String name = scanner.next();
-                        System.out.println(this.classroomService.findByName(name));
+                        this.ACTION += "Find classroom by id";
+                        System.out.println(this.classroomService.findByName());
                         break;
                     }
                     case 4: {
-                        this.ACTION += "Find classroom by cnp";
-                        scanner.nextLine();
-                        System.out.println("Enter the cnp of the classroom you want to find: ");
-                        String cnp = scanner.nextLine();
-                        System.out.println(this.classroomService.findByCnp(cnp));
-                        break;
-                    }
-                    case 5: {
                         this.ACTION += "Update classroom details";
-                        scanner.nextLine();
-                        System.out.println("Enter the cnp of the classroom you want to update: ");
-                        this.classroomService.updateClassroom(scanner.nextLine());
+                        this.classroomService.updateClassroom();
                         System.out.println("The classroom has been updated successfully!");
                         break;
                     }
-                    case 6: {
+                    case 5: {
                         this.ACTION += "Delete classroom";
-                        scanner.nextLine();
-                        System.out.println("Enter the cnp of the classroom you want to delete: ");
-                        String cnp = scanner.nextLine();
-                        this.classroomService.deleteClassroom(cnp);
+                        this.classroomService.deleteClassroom();
                         System.out.println("The classroom has been deleted successfully!");
                         break;
                     }
-                    case 7: {
-                        this.ACTION += "Get classrooms by department";
-                        System.out.println(classroomService.getClassroomsByDepartment());
+                    case 6: {
+                        this.ACTION += "Get classrooms by type";
+                        System.out.println(classroomService.findByType());
                         break;
                     }
                 }
