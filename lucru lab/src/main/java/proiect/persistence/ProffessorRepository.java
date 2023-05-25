@@ -166,21 +166,4 @@ public class ProffessorRepository  implements GenericRepository<Proffessor> {
             e.printStackTrace();
         }
     }
-
-//    public List<Proffessor>  findByDepartment(String department) {
-//        String sql = "SELECT * FROM proffessors WHERE department=?";
-//        try {
-//            var preparedStatement = connection.prepareStatement(sql);
-//            preparedStatement.setString(1, department);
-//            var resultSet = preparedStatement.executeQuery();
-//            while (resultSet.next()) {
-//                Proffessor proffessor = new Proffessor(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6), resultSet.getString(7));
-//                proffessorMap.put(proffessor.getCnp(), proffessor);
-//            }
-//            return (List<Proffessor>) proffessorMap.values();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 }

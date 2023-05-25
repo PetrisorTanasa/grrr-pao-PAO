@@ -92,39 +92,6 @@ public class FacultyRepository implements GenericRepository<Faculty> {
         return Optional.empty();
     }
 
-//    public Optional<Faculty> findByName(Faculty entity){
-//        String sql = "SELECT * FROM faculties WHERE name = ?";
-//        try (PreparedStatement statement = this.connection.prepareStatement(sql)) {
-//            statement.setString(1, entity.getName());
-//            var result = statement.executeQuery();
-//            if (result.next()) {
-//                return Optional.of(new Faculty(
-//                        result.getString("name"),
-//                        result.getString("address"),
-//                        result.getInt("nrrooms"),
-//                        result.getInt("nrfloors"),
-//                        result.getInt("foundingyear"),
-//                        result.getInt("squaremeters"),
-//                        result.getInt("usefulsquaremeters"),
-//                        result.getString("dean"),
-//                        result.getString("secretary"),
-//                        result.getInt("nrdepartments"),
-//                        result.getInt("nrstudents"),
-//                        result.getInt("nrteachers"),
-//                        result.getInt("nrlaboratories"),
-//                        result.getInt("nrclassrooms"),
-//                        result.getInt("nroffices"),
-//                        result.getInt("nrlibraries"),
-//                        result.getInt("nrcafeterias"),
-//                        result.getInt("nramphitheaters")
-//                ));
-//            }
-//        } catch (SQLException e) {
-//            System.out.println("Could not find faculty in database: " + e.getMessage());
-//        }
-//        return Optional.empty();
-//    }
-
     @Override
     public List<Faculty> findAll() {
         Connection connection = getDatabaseConnection();

@@ -42,12 +42,11 @@ public class AuditService {
             // Write headers
             writer.write("Action,Timestamp");
             writer.newLine();
-            // Add rows
+
             for (Audit audit : auditRepository.findAll()) {
                 writer.write( audit.getAction() + "," + audit.getTimestamp());
                 writer.newLine();
             }
-            // Add more data rows as needed
 
             System.out.println("Data written to CSV file successfully.");
         } catch (IOException e) {
