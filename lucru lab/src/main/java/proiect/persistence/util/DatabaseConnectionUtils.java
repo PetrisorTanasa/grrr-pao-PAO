@@ -32,7 +32,6 @@ public class DatabaseConnectionUtils {
 
     public static Connection getDatabaseConnection() {
         System.out.println("Getting database connection...");
-        System.out.println(instance);
         if (instance == null) {
             synchronized (DatabaseConnectionUtils.class) {
                 if (instance == null) {
